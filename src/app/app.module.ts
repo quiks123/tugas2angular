@@ -8,6 +8,13 @@ import { DetailComponent } from './detail/detail.component';
 import { FavoriteComponent } from './favorite/favorite.component';
 import { RouterModule, Routes } from '@angular/router';
 
+const ROUTES : Routes = [
+  {path : 'detail', component : DetailComponent},
+  {path : 'favorite', component : FavoriteComponent},
+  {path : 'detail/:judul', component : DetailComponent}
+
+]
+
 @NgModule({
   imports:      [ 
     BrowserModule, FormsModule, RouterModule.forRoute(ROUTES)  ],

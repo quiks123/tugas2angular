@@ -7,8 +7,12 @@ import { Component, VERSION } from '@angular/core';
 })
 export class AppComponent  {
   name = 'Angular ' + VERSION.major;
-  
+
   judul = ""
   isi = ""
   tanggal = ""
+
+  input(){
+    this.router.navigate(['/detail/'+this.judul])
+  }
 }
