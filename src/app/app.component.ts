@@ -1,4 +1,6 @@
 import { Component, VERSION } from '@angular/core';
+import { Router } from '@angular/router';
+import { GlobalvarService } from './globalvar.service';
 
 @Component({
   selector: 'my-app',
@@ -8,11 +10,17 @@ import { Component, VERSION } from '@angular/core';
 export class AppComponent  {
   name = 'Angular ' + VERSION.major;
 
+  constructor(private router:Router, public globalvar:GlobalvarService){
+  }
+
   judul = ""
   isi = ""
   tanggal = ""
 
   input(){
-    this.router.navigate(['/detail/'+this.judul])
+    this.globalvar.setjudul(this.judul)
+    this.globalvar.setisi(this.isi)
+    this.globalvar.settanggal(this.tanggal)
+    this.router.navigate(['/detail/'])
   }
 }

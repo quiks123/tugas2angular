@@ -1,4 +1,6 @@
 import { Component, OnInit } from '@angular/core';
+import { Router } from '@angular/router';
+import { GlobalvarService } from './globalvar.service';
 
 @Component({
   selector: 'app-favorite',
